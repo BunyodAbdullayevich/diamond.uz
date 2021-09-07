@@ -5,11 +5,14 @@
 @import 'files/media';
 
 //=========================Header
+header {
+  background-color: #fff;
+}
 .header {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 13px;
+  padding-bottom: 13px;
   &-nav-link {
     @include fontAll(13px, 400, 'Montserrat');
     text-transform: uppercase;
@@ -197,5 +200,57 @@
   &_info-item {
     display: flex;
     align-items: center;
+  }
+}
+
+.products {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  &-price {
+    @include fontAll(16px, 400, 'Montserrat');
+    color: $main-col;
+  }
+  &-sale {
+    @include fontAll(12px, 400, 'Montserrat');
+    color: $gray-col;
+    text-decoration: line-through;
+    margin-top: 25px;
+  }
+  &-title {
+    @include fontAll(16px, 400, 'Montserrat');
+    color: $black-col;
+    margin-top: 30px;
+    position: relative;
+    &::after {
+      content: '';
+      width: 77px;
+      height: 1px;
+      background-color: $main-col;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &-img {
+    @include fixImg(156px, 161px, false);
+    margin: 0 auto;
+  }
+  &-item {
+    width: 25%;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @extend %transition;
+    cursor: pointer;
+    &:hover {
+      z-index: 2;
+      box-shadow: 7px 5px 40px rgba(0, 0, 0, 0.3);
+    }
   }
 }
