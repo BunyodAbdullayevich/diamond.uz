@@ -1,0 +1,201 @@
+@import 'files/fonts';
+@import 'files/colors';
+@import 'files/mixins';
+@import 'files/classes';
+@import 'files/media';
+
+//=========================Header
+.header {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 13px;
+  &-nav-link {
+    @include fontAll(13px, 400, 'Montserrat');
+    text-transform: uppercase;
+    color: $black-col;
+    @extend %transition;
+    &:hover {
+      color: $main-col;
+    }
+  }
+  &-social-links {
+    a {
+      display: inline-block;
+    }
+    a + a {
+      margin-left: 10px;
+    }
+  }
+  &-social-phone {
+    margin-right: 30px;
+    @extend %d-f;
+    @extend %ai-e;
+    flex-direction: column;
+    div {
+      @include fontAll(16px, 400, 'Montserrat');
+      color: $black-col;
+      letter-spacing: 0.2em;
+    }
+    p {
+      @include fontAll(12px, 400, 'Montserrat');
+      color: $main-col;
+      margin-top: 5px;
+    }
+  }
+  &-logo {
+    padding: 15px 0;
+  }
+  &-location-title {
+    @include fontAll(12px, 400, 'Montserrat');
+    color: $black-col;
+    &:nth-child(2) {
+      color: $main-col;
+      margin-top: 7px;
+    }
+  }
+  &-location-info {
+    margin-left: 30px;
+  }
+  &-location-item {
+    h5 {
+      @include fontAll(14px, 400, 'Montserrat');
+      margin-left: 5px;
+    }
+  }
+  &-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+//=========================Content
+
+.main_slider {
+  &-block {
+    height: 100%;
+    @extend %d-f;
+    @extend %jc-c;
+    @extend %ai-fs;
+    @extend %fl-dc;
+  }
+  &-btn {
+    margin-top: 50px;
+  }
+  &-info-item + &-info-item {
+    margin-left: 18px;
+  }
+  &-info {
+    margin-top: 70px;
+  }
+  &-info-item {
+    max-width: 221px;
+    @include fontAll(16px, 400, 'Montserrat');
+    line-height: 20px;
+    color: $gray-col;
+    position: relative;
+    &::after {
+      content: '';
+      width: 42px;
+      height: 1px;
+      background-color: $main-col;
+      position: absolute;
+      left: 0;
+      top: -20px;
+    }
+  }
+  &-sub-title {
+    @include fontAll(46px, 500, 'CG');
+    letter-spacing: 0.1em;
+    line-height: 56px;
+  }
+  &-title {
+    @include fontAll(60px, 600, 'CG');
+    line-height: 72px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  &-item {
+    width: 100%;
+    height: calc(100vh - 150px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+.trand {
+  @extend %d-f;
+  @extend %ai-c;
+  margin-top: 100px;
+  &_left {
+    width: 70%;
+    margin-left: auto;
+  }
+  &-product {
+    width: calc(33.33% - 30px);
+    margin: 15px;
+    position: relative;
+    cursor: pointer;
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      @extend %transition;
+    }
+    &:hover::after {
+      background-color: rgba(255, 255, 255, 0);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-products {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  &_sub-title {
+    @include fontAll(20px, 400, 'Montserrat');
+    color: $gray-col;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 70%;
+  }
+  &-img {
+    @include fixImg(100%, 590px, false);
+  }
+  &-item {
+    width: 50%;
+    &:nth-child(2) {
+      margin-left: 30px;
+    }
+  }
+}
+
+.diamond {
+  &_info-icon {
+    width: 50px;
+  }
+  &_info-title {
+    @include fontAll(16px, 400, 'Montserrat');
+    margin-left: 30px;
+  }
+  &_info {
+    margin-top: 50px;
+  }
+  &_info-item + &_info-item {
+    margin-top: 25px;
+  }
+  &_info-item {
+    display: flex;
+    align-items: center;
+  }
+}
